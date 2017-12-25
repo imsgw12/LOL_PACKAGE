@@ -1,0 +1,31 @@
+<html>
+<body>
+
+<?php
+
+include_once 'cgi-bin/Snoopy.class.php';
+$snoopy = new snoopy;
+$snoopy->fetch("http://lol.inven.co.kr/dataninfo/match/teamList.php?teams=217");
+$txt = $snoopy->results;
+//$rex="/\<a href=\"http://news.naver.com/\" class=\"cl_a cl_news\" data-clk=\"ncy.newshome\"\>(.*)\<\/a\>/";
+//$rex="/\<option value=\"nexearch\"\>(.*)\<\/option\>/";
+//$rex = '/<legend class="blind">(.*?)<\/legend>/is'
+//$rex="/\<div class=\"area_layout.+\"\>(.*)\<\/div\>/";
+//$rex="/\<div class=\"area_layout.+\"\>(.*)\<\/div\>/";
+preg_match_all('/<div class="date">(.*?)<\/div>/is', $snoopy->results, $text);
+//preg_match_all($rex,$txt,$o);
+//priint_r($o);
+//print_r($txt);
+print_r($text[0][0]);
+preg_match_all('/<div class="title">(.*?)<\/div>/is', $snoopy->results, $text);
+print_r($text[0][0]);
+preg_match_all('/<div class="stage">(.*?)<\/div>/is', $snoopy->results, $text);
+print_r($text[0][0]);
+preg_match_all('/<span class="tx4">(.*?)<\/span>/is', $snoopy->results, $text);
+print_r($text[0][0]);
+
+?>
+
+</body>
+</html>
+

@@ -1,0 +1,81 @@
+
+@font-face{
+  font-family:"koverwatch";
+  src:url("font/hoonromanregular.ttf") format("truetype");
+  font-style:normal;
+  font-weight:normal;
+}
+
+#hello1 {
+  color: red;
+  background-color: yellow;
+}
+#hello2 {
+  color: green;
+}
+
+body.main {
+    background-image : url("background.jpg");
+    background-color : #cccccc;
+    font-family: koverwatch;
+    font-size: 30px;
+}
+
+.wrap {
+    position: absolute;
+    top: 67%;
+    left: 20%;
+    margin-top: -86px;
+    margin-left: -89px;
+    text-align: left;
+}
+
+.wrap2 {
+    position: absolute;
+    top: 67%;
+    left: 60%;
+    margin-top: -86px;
+    margin-left: -89px;
+    text-align: right;
+}
+
+a {
+    -webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    -moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    -ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    -o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    display: block;
+    margin: 20px auto;
+    max-width: 180px;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10% 10%;
+}
+
+a.button {
+    color: rgba(255, 255, 255, 0.85);
+    box-shadow: rgba(255, 255, 255, 0.85) 0 0px 0px 2px inset;
+    text-align: center;
+}
+
+a.button:hover {
+    color: rgba(255, 255, 255, 1);
+    box-shadow: rgba(255, 255, 255, 1) 0 0px 0px 40px inset;
+    text-align: center;
+    font-style : Italic;
+}
+
+h1 {
+  font-family : koverwatch;
+  font-size : 50px;
+  text-align : center;
+  color : white;
+}
+
+h6 {
+  font-family : koverwatch;
+  font-size : 20px;
+  text-align : center;
+  color : white;
+}

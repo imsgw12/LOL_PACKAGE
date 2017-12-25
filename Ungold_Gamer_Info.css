@@ -1,0 +1,441 @@
+@font-face{
+  font-family:"koverwatch";
+  src:url("font/hoonromanregular.ttf") format("truetype");
+  font-style:normal;
+  font-weight:normal;
+}
+
+.name_wrap{
+	font-size: 8px;
+}
+
+.wrap {
+    position: absolute;
+    top: 95%;
+    left: 95%;
+    margin-top: -86px;
+    margin-left: -89px;
+    text-align: left;
+}
+
+.wrap2 {
+    position: absolute;
+    top: 67%;
+    left: 60%;
+    margin-top: -86px;
+    margin-left: -89px;
+    text-align: right;
+}
+
+a {
+    -webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    -moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    -ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    -o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    display: block;
+    margin: 20px auto;
+    max-width: 50px;
+    max-height: 50px;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 3% 3%;
+}
+
+a.button1 {
+    color: rgba(255, 255, 255, 0.85);
+    box-shadow: rgba(255, 255, 255, 0.85) 0 0px 0px 2px inset;
+    text-align: center;
+}
+
+a.button1:hover {
+    color: rgba(255, 255, 255, 1);
+    box-shadow: rgba(255, 255, 255, 1) 0 0px 0px 10px inset;
+    text-align: center;
+    font-style : Italic;
+}
+
+body {
+ background-size: cover;
+ background-repeat: no-repeat;	
+ background-image: url('img/LOL_Picture.jpg');
+ font-family: koverwatch;
+ font-size: 15px;
+
+}
+
+label {
+  position:relative; 
+  background-color:#fff;
+  overflow:hidden; 
+  display:block; 
+  padding:5px;
+  max-width:12em; 
+  margin:auto; 
+  font-size:1em; /*use this to scale the select*/
+}
+
+
+select {
+  width:100%;
+  font-size: .9em;
+  min-height: 1em;
+  margin: 0;
+  color:#888;
+  border:none;
+  outline:none;
+  display: inline-block;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  appearance:none;
+  cursor:pointer;
+}
+
+.select-button {
+  background-color:#33B3A2;
+  right:0; top:0;
+  position:absolute;
+  pointer-events:none;
+  padding: 0 .3em;
+  height: 100%;
+}
+
+
+.small-arrow-down {
+  width: 0; 	
+  height: 0; 	 
+  border-left: .4em solid transparent; 
+  border-right: .4em solid transparent; 
+  border-top: .4em solid #fff; 
+  margin: 50% 0em 0em 0;
+
+}
+
+
+.buttonHolder{
+  margin:80px auto;
+  width:400px;
+}
+
+
+		.button{
+			background-image: -webkit-linear-gradient(top, #f4f1ee, #fff);
+			background-image: linear-gradient(top, #f4f1ee, #fff);
+			border-radius: 50%;
+			box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, .3), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204,198,197,.5);
+			float:left;
+			height: 70px;
+			margin: 0 30px 30px 0;
+			position: absolute;
+			left: 95%;
+			top: 0%;
+			width: 70px;			
+			-webkit-transition: all .1s linear;
+			transition: all .1s linear;
+		}
+
+		.button:after{
+			color:#e9e6e4;
+			content: "";
+			display: block;
+			font-size: 30px;
+			height: 30px;
+			text-decoration: none;
+			text-shadow: 0px -1px 1px #bdb5b4, 1px 1px 1px white;
+			position: absolute;
+			width: 30px;
+		}
+
+
+		.heart:after{
+			content: "❤";
+			left: 21px;
+			top: 21px;
+		}
+
+		.flower:after{
+			content: "✿";
+			left: 23px;
+			top: 19px;
+		}
+
+		.tick:after{
+			content: "✔";
+			left:23px;
+			top:20px;
+		}
+
+		.cross:after{
+			content: "✖";
+			left: 24px;
+			top: 19px;
+		}
+
+		.button:hover{
+			background-image: -webkit-linear-gradient(top, #fff, #f4f1ee);
+			background-image: linear-gradient(top, #fff, #f4f1ee);
+			color:#0088cc;
+		}
+
+		.heart:hover:after{
+			color:#f94e66;
+			text-shadow:0px 0px 6px #f94e66;
+		}
+
+		.flower:hover:after{
+			color:#f99e4e;
+			text-shadow:0px 0px 6px #f99e4e;
+		}
+
+		.tick:hover:after{
+			color:#83d244;
+			text-shadow:0px 0px 6px #83d244;
+		}
+
+		.cross:hover:after{
+			color:#eb2f2f;
+			text-shadow:0px 0px 6px #eb2f2f;
+		}
+
+		
+
+		.button:active{
+			background-image: -webkit-linear-gradient(top, #efedec, #f7f4f4);
+			background-image: linear-gradient(top, #efedec, #f7f4f4);
+			box-shadow: 0 3px 5px 0 rgba(0,0,0,.4), inset 0px -3px 1px 1px rgba(204,198,197,.5);
+		}
+
+		.button:active:after{
+			color:#dbd2d2;
+			text-shadow: 0px -1px 1px #bdb5b4, 0px 1px 1px white;
+		}
+
+
+
+.loader {
+  position: absolute;
+  top: calc(50% - 32px);
+  left: calc(50% - 32px);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  perspective: 800px;
+}
+
+.inner {
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;  
+}
+
+.inner.one {
+  left: 0%;
+  top: 0%;
+  animation: rotate-one 1s linear infinite;
+  border-bottom: 3px solid #EFEFFA;
+}
+
+.inner.two {
+  right: 0%;
+  top: 0%;
+  animation: rotate-two 1s linear infinite;
+  border-right: 3px solid #EFEFFA;
+}
+
+.inner.three {
+  right: 0%;
+  bottom: 0%;
+  animation: rotate-three 1s linear infinite;
+  border-top: 3px solid #EFEFFA;
+}
+
+@keyframes rotate-one {
+  0% {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+  }
+}
+
+@keyframes rotate-two {
+  0% {
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+  }
+}
+
+@keyframes rotate-three {
+  0% {
+    transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+  }
+}
+
+table.Contest_Gamer {
+  width: 100%;
+  min-width: 1000px;
+  margin-bottom: 2.4rem;
+  background-color: #20262e;
+  color: #fff;
+  overflow: hidden;
+}
+
+table tr.Contest_Gamer :nth-child(even) {
+  background-color: rgb(46, 53, 62);
+}
+
+table th.Contest_Gamer ,
+table td.Contest_Gamer :before {
+}
+
+table th.Contest_Gamer  {
+  display: none;
+}
+
+table th.Contest_Gamer ,
+table td.Contest_Gamer  {
+  margin: .5rem 2rem;
+  text-align: center;
+}
+
+table td.Contest_Gamer  {
+  display: block;
+  font-size: 90%;
+}
+
+table td.Contest_Gamer :first-child {
+  padding-top: 1rem;
+}
+
+table td.Contest_Gamer :last-child {
+  padding-bottom: 1rem;
+}
+
+table td.Contest_Gamer :before {
+  content: attr(data-th) ':\00a0';
+  font-weight: bold;
+  min-width: 8rem;
+  display: inline-block;
+}
+
+.table-2 table td:before {
+  min-width: 0;
+}
+
+.table-3 table {
+  background-color: rgb(46, 53, 62);
+}
+
+.table-3 table tr:nth-child(even) {
+  background-color: transparent;
+}
+
+.table-3 table td:before {
+  width: 100%;
+  font-weight: normal;
+  opacity: .8;
+}
+
+.table-3 table td {
+  margin: 0;
+  padding: 1.5rem 2rem 0 2rem;
+  font-weight: bold
+}
+
+.table-3 table tr td:first-child {
+  background-color: #20262e;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.table-3 table tr td:last-child {
+  padding-bottom: 1.5rem;
+  border-bottom: 4px solid rgba(255, 255, 255, .3)
+}
+
+.table-3 table tr:last-child td:last-child {
+  border-bottom: none;
+}
+
+@media (min-width: 600px) {
+  table td.Contest_Gamer :before {
+    display: none;
+  }
+  table th.Contest_Gamer ,
+  table td.Contest_Gamer {
+    display: table-cell;
+  }
+  table th.Contest_Gamer ,
+  table td.Contest_Gamer ,
+  table td.Contest_Gamer :first-child,
+  table td.Contest_Gamer :last-child {
+    padding: 1.5rem 2rem;
+  }
+  .table-3 table {
+    background-color: #20262e;
+  }
+  .table-3 table tr:nth-child(even) {
+    background-color: rgb(46, 53, 62);
+  }
+  .table-3 table td {
+    margin: .5rem 2rem;
+    padding: 1.5rem 2rem;
+    font-weight: normal
+  }
+  .table-3 table tr td:first-child {
+    background-color: transparent;
+  }
+  .table-3 table tr td:last-child {
+    border-bottom: none;
+  }
+}
+
+.btn-three {
+	color: #FFF;
+	transition: all 0.5s;
+	position: relative;
+	z-index: 0;
+}
+.btn-three::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255,255,255,0.1);
+	transition: all 0.3s;
+}
+.btn-three:hover::before {
+	opacity: 0 ;
+	transform: scale(0.5,0.5);
+}
+.btn-three::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: all 0.3s;
+	border: 1px solid rgba(255,255,255,0.5);
+	transform: scale(1.2,1.2);
+}
+.btn-three:hover::after {
+	opacity: 1;
+	transform: scale(1,1);
+}
+
+/* No longer required
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    select {padding-right: 1.5em;}
+} */

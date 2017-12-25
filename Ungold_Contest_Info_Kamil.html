@@ -1,0 +1,128 @@
+<html>
+<head>
+
+<script type = "text/javascript" src="jquery/lib/jquery.js"> </script>
+<script type = 'text/javascript' src='jquery/lib/jquery.bgiframe.min.js'> </script>
+<script type = 'text/javascript' src='jquery/lib/jquery.ajaxQueue.js'> </script>
+<script type = 'text/javascript' src='jquery/jquery.autocomplete.js'> </script>
+<link rel=stylesheet type="text/css" href="jquery/jquery.autocomplete.css" />
+<link rel=stylesheet href="ungoldstyle2.css?ver=1" type="text/css">
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+
+<title>Champion select</title>
+</head>
+<body>
+
+  <script>
+    var top_champ = [
+		'aatrox', 'akali', 'camille', 'chogath', 'darius', 'drmundo', 'ekko', 'fiora',
+		'galio', 'gangplank', 'garen', 'gnar', 'heimerdinger', 'illaoi', 'irelia',
+		'jarvaniv', 'jax', 'jayce', 'karthus', 'kayle', 'kennen', 'kled', 'ressandra',
+		'malphite', 'malzahar', 'maokai', 'mordekaiser', 'nasus', 'nautilus', 'olaf',
+		'ornn', 'pantheon', 'poppy' ,'quinn', 'renekton', 'rengar', 'riven', 'rumble',
+		'ryze', 'shen', 'singed', 'sion', 'swain', 'tahmkench', 'talon', 'teemo',
+		'trundle', 'tryndamere', 'urgot', 'vayne', 'vladimir', 'wukong', 'yasuo', 'yorick'
+	      ];
+
+    var jungle_champ = [
+		'amumu', 'camille' , 'drmundo', 'elise', 'evelynn', 'fiddlesticks', 'gragas',
+		'graves', 'hecarim', 'ivern', 'jarvaniv', 'jax', 'kayn', 'khazix', 'kindred',
+		'leesin', 'maokai', 'masteryi', 'nidalee', 'nocturne', 'nunu', 'olaf', 'pantheon',
+		'rammus', 'reksai', 'rengar', 'riven', 'sejuani', 'shaco', 'shyvana', 'skarner',
+		'trundle', 'twitch', 'udyr', 'vi', 'warwick', 'wukong', 'xinzhao', 'zac'
+		];
+
+    var mid_champ = [
+		'ahri', 'akali', 'anivia', 'annie', 'aurelionsol', 'azir', 'brand', 'cassiopeia',
+		'corki', 'diana', 'ekko', 'fiddlesticks', 'fizz', 'galio', 'heimerdinger',
+		'jayce', 'karma', 'karthus', 'kassadin', 'katarina', 'kayle', 'leblanc',
+		'lissandra', 'lucian', 'lux', 'malphite', 'malzahar', 'morgana', 'twistedfate',
+		'veigar', 'velkoz', 'viktor', 'vladmir', 'xerath', 'yasuo', 'zed', 'ziggs',
+		'zilean', 'zoe'
+		];
+
+    var ad_champ = [
+		'ashe', 'caitlyn', 'corki', 'draven', 'ezreal', 'jhin', 'jinx', 'kalista',
+		'kogmaw', 'lucian', 'missfortune', 'sivir', 'tristana', 'twitch', 'varus',
+		'vayne', 'xayah'
+		];
+
+    var sup_champ = [
+		'alistar', 'annie', 'bard', 'blitzcrank', 'brand', 'braum', 'fiddlesticks',
+		'janna', 'karma', 'leona', 'lulu', 'lux', 'malphite', 'missfortune', 'morgana',
+		'nami', 'nautilus', 'poppy', 'rakan', 'shen', 'sion', 'sona', 'soraka', 
+		'tahmkench', 'taric', 'teemo', 'thresh', 'trundle', 'veigar', 'velkoz', 'xerath',
+		'zilean', 'zoe', 'zyra'
+		];
+  </script>
+		
+<h1><br> Find your Champion! </h1>
+
+<script>
+ function submit_form() {
+    document.champ_form.target = 'ifrm';
+    document.champ_form.action = 'http://cspro.sogang.ac.kr/~cse20141563/cgi-bin/Champ_Info.php';
+    document.champ_form.submit();
+  }
+
+</script>
+
+<form name = "champ_form" method="GET">
+
+  <table class = "table-1">
+  <tbody>
+  <tr>
+    <th> Top </th>
+    <th> Jungle </th>
+    <th> Mid </th>
+    <th> AD Carry </th>
+    <th> Support </th>
+  </tr>
+ 
+  <tr>
+    <td data-th="Top" > <input type = "text" name = "TOP" id="top"> </td>  
+    <td data-th="Jungle"> <input type = "text" name = "JUNGLE" id ="jungle" > </td> 
+    <td data-th="Mid"> <input type = "text" name = "MID" id="mid"> </td> 
+    <td data-th="AD Carry"> <input type = "text" name = "AD" id="ad"> </td> 
+    <td data-th="Support"> <input type = "text" name = "SUP" id="sup"> </td>  
+  </tr>
+
+  </tbody>
+  </table>
+  <br>
+  <center> <INPUT TYPE = "button"  VALUE = "Champion Combination" onclick='submit_form()'> </center>
+
+</form>
+<iframe name='ifrm' style="width:100%; height:55%; border=0px; "></iframe> <br />
+
+<script>
+  $(document).ready(function() {
+    $("#top").autocomplete(top_champ, {matchContains: true, selectFirst:false});
+  });
+
+  $(document).ready(function() {
+    $("#jungle").autocomplete(jungle_champ, {matchContains: true, selectFirst:false});
+  });
+
+  $(document).ready(function() {
+    $("#mid").autocomplete(mid_champ, {matchContains: true, selectFirst:false});
+  });
+
+  $(document).ready(function() {
+    $("#ad").autocomplete(ad_champ, {matchContains: true, selectFirst:false});
+  });
+
+  $(document).ready(function() {
+    $("#sup").autocomplete(sup_champ, {matchContains: true, selectFirst:false});
+  });
+
+</script>
+
+<br>
+<form>
+  <a class="button1" href="Ungold_UI.html">Back </a>
+</form>
+</body>
+</html>

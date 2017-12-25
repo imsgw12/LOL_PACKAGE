@@ -1,0 +1,93 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<link rel="stylesheet" href="Ungold_Contest_Info.css">
+<title>Page Title</title>
+</head>
+
+
+
+<body class = "Team_Page">
+
+<label>
+    <select id='Team_Name' onchange="showTable(this.value, document.getElementById('Contest_Gamer').value)">
+        <option value="" selected>선택하세요</option>
+        <option value="217">롱주</option>
+        <option value="223">SKT</option>
+        <option value="222">삼성</option>
+        <option value="214">ROX</option>
+        <option value="219">진 에어</option>
+        <option value="450">Ever 8</option>
+        <option value="198">아프리카</option>
+        <option value="300">bbq</option>
+        <option value="220">KT</option>
+        <option value="411">MVP</option>
+        <option value="218">CJ</option>
+        <option value="221">콩두</option>
+    </select>
+    <div class="select-button"><div class="small-arrow-down"></div></div>
+</label>
+
+<br/>
+
+<label>
+    <select id="Contest_Gamer" onchange="showTable(document.getElementById('Team_Name').value, this.value)">
+        <option value="" selected>선택하세요</option>
+        <option value="Contest">대회정보</option>
+        <option value="Gamer">선수정보</option>
+    </select>
+    <div class="select-button"><div class="small-arrow-down"></div></div>
+</label>
+
+<br/>
+
+
+<!--<button id='hello1' onclick ="location.href='Ungold_Contest_Gamer.html'"><img src="http://pds.inven.co.kr/upload/2016/01/04/intro/i13247536708.jpg"></button>-->
+<!--
+<button class='btn-5' id='hello1' onclick ="location.href='cgi-bin/Ungold_Contest_Gamer.php?q=217'">롱주</button>
+<button class='btn-5' id='hello1' onclick ="location.href='cgi-bin/Ungold_Contest_Gamer.php?q=223'">SKT</button>
+<button class='btn-5' id='hello1' onclick ="location.href='cgi-bin/Ungold_Contest_Gamer.php?q=222'">삼성</button>
+<button class='btn-5' id='hello1' onclick ="location.href='cgi-bin/Ungold_Contest_Gamer.php?q=214'">ROX</button>
+<button class='btn-5' id='hello1' onclick ="location.href='cgi-bin/Ungold_Contest_Gamer.php?q=219'">진에어</button>
+<button class='btn-5' id='hello1' onclick ="location.href='cgi-bin/Ungold_Contest_Gamer.php?q=450'">Ever 8</button>
+<button class='btn-5' id='hello1' onclick ="location.href='cgi-bin/Ungold_Contest_Gamer.php?q=198'">아프리카</button>
+<button class='btn-5' id='hello1' onclick ="location.href='cgi-bin/Ungold_Contest_Gamer.php?q=300'">bbq</button>
+<button class='btn-5' id='hello1' onclick ="location.href='cgi-bin/Ungold_Contest_Gamer.php?q=220'">KT</button>
+<button class='btn-5' id='hello1' onclick ="location.href='cgi-bin/Ungold_Contest_Gamer.php?q=411'">MVP</button>
+<button class='btn-5' id='hello1' onclick ="location.href='cgi-bin/Ungold_Contest_Gamer.php?q=218'">CJ</button>
+<button class='btn-5' id='hello1' onclick ="location.href='cgi-bin/Ungold_Contest_Gamer.php?q=221'">콩두</button>-->
+<!--
+<button id='hello1' onclick ="location.href='cgi-bin/Ungold_Contest_Info.php'"><img src="http://pds.inven.co.kr/upload/2016/01/04/intro/i13247536708.jpg"></button>
+-->
+<a class="button1 wrap" href='Ungold_UI.html'>Back</a>
+
+
+
+<script>
+function showTable(Team_Name, Contest_Gamer) {
+  var xhttp;    
+  if (Team_Name == "" || Contest_Gamer == "") {
+    document.getElementById("Table").innerHTML = "";
+    return;
+  }
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      //document.getElementById("Table").innerHTML = this.responseText;
+      if (Contest_Gamer == "Contest"){
+	setTimeout("location.href='cgi-bin/Ungold_Contest_Info.php?q=" + Team_Name + "'",3000);
+	}
+      else if(Contest_Gamer == "Gamer"){	
+	setTimeout("location.href='cgi-bin/Ungold_Gamer_Info.php?q=" + Team_Name + "'",3000);
+	}
+    }
+  };
+  xhttp.open("GET", "cgi-bin/Get_Information.php?team_name="+Team_Name+"&contest_gamer="+Contest_Gamer, true);
+  xhttp.send();
+}
+</script>
+
+</body>
+</html>
